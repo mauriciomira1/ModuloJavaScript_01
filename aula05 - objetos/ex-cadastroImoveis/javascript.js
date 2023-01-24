@@ -1,10 +1,11 @@
 
 let novoImovel = [] /* Proprietário, qtd de quartos, qtd banheiros, se possui garagem */
 let imoveis = [novoImovel]  
+let opcao = ""
 
 do {
-let opcao = prompt("Bem-vindo ao cadastro de imóveis.\n\n" + "Quantidade de imóveis cadastrados: " + novoImovel.length + "\n\nVocê deseja:\n\n" + "1. Salvar novo imóvel\n" + "2. Mostrar todos os imóveis\n" + "3. Sair")
-   switch(opcao) {
+opcao = prompt("Bem-vindo ao cadastro de imóveis.\n\n" + "Quantidade de imóveis cadastrados: " + novoImovel.length + "\n\nVocê deseja:\n\n" + "1. Salvar novo imóvel\n" + "2. Mostrar todos os imóveis\n" + "3. Sair")
+   switch (opcao) {
     case "1":
       
       novoImovel[0] = prompt("CADASTRO DE NOVO IMÓVEL\n\n" + "Insira o nome do proprietário:")
@@ -18,11 +19,10 @@ let opcao = prompt("Bem-vindo ao cadastro de imóveis.\n\n" + "Quantidade de im�
       alert('digitou 2')
       break
    case "3":
-      alert("Encerrando...")
       break
    default:
       alert("Opção inválida!")
    }
 
-} while(opcao !== "3")
-alert('programa finalizado')
+} while (opcao !== "3");
+alert('Programa finalizado!')
