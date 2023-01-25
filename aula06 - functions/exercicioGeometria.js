@@ -75,10 +75,11 @@ function sair(){
    alert("Encerrando programa...")
    } 
 
+let opcao = ""
 
 do {
    
-   let opcao = prompt(
+   opcao = prompt(
    "Informe a opção que deseja calcular:\n" + 
    "1. Área do triângulo\n" + 
    "2. Área do retângulo\n" + 
