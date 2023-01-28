@@ -56,5 +56,21 @@ const nivelTotal = personagens.reduce(function (valorAcumulado, personagem) {
 console.log(nivelTotal)
 
 const racas = personagens.reduce(function(valorAcumulado, personagem) {
-  if ( )
-}, {})
+  if (valorAcumulado[personagem.raca]) {
+    valorAcumulado[personagem.raca].push(personagem)
+  } else {
+    valorAcumulado[personagem.raca] = [personagem]
+  }
+
+  return valorAcumulado
+}, {}) 
+
+console.log (racas)
+
+// Sort
+
+const personagensOrdenados = personagens.slice().sort(function(a, b) {
+  return a.nivel - b.nivel
+})
+
+console.log(personagensOrdenados)
