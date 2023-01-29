@@ -11,8 +11,20 @@ function listarVagas () {
 
 function novaVaga() {
   const nome = prompt("Insira o nome da nova vaga:")
+  if (nome == "") {
+    alert("Valor inválido. Por favor, insira um nome válido.\n\nRetornando ao Menu Principal...")
+    return
+  }
   const descricao = prompt("Insira a descrição da vaga:")
+  if (descricao == "") {
+    alert("Valor inválido. Por favor, insira uma descrição válida.\n\nRetornando ao Menu Principal...")
+    return
+  }
   const dataLimite = prompt("Insira a data limite (dd/mm/aaaa):")
+  if (dataLimite == "") {
+    alert("Valor inválido. Por favor, insira uma data válida.\n\nRetornando ao Menu Principal...")
+    return
+  }
   const confirmacao = confirm("Deseja criar a vaga?\n" + "Vaga: " + nome + "\nDescrição: " + descricao + "\nData Limite: " + dataLimite)
   
   if (confirmacao) {
@@ -28,6 +40,10 @@ function novaVaga() {
 
  function visualizarVaga () {
   const option = prompt("Qual o índice da vaga que deseja listar?")
+  if (option == "") {
+    alert("Valor inválido. Por favor, insira uma opção válida.\n\nRetornando ao Menu Principal...")
+    return
+  }
   const candidatosEmTexto = vagas[option].candidatos.reduce(function (textoFinal, candidato){
     return textoFinal + "\n - " + candidato
   }, "")
@@ -41,21 +57,17 @@ function novaVaga() {
   )
 } 
 
-/* function visualizarVaga () {
-  const option = prompt("Qual o índice da vaga que deseja listar?")
-  const candidatosEmTexto = vagas[option].candidatos
-  alert(
-  "Nome da Vaga: " + vagas[option].nome +
-  "\nDescrição: " + vagas[option].descricao +
-  "\nData Limite: " + vagas[option].dataLimite +
-  "\nNº de candidatos: " + vagas[option].candidatos.length +
-  "\nNomes dos candidatos: " + candidatosEmTexto
-  )
-} */
-
 function inscreverCandidato () {
   const nomeCandidato = prompt("Qual o nome do candidato(a)?")
+  if (nomeCandidato == "") {
+    alert("Valor inválido. Por favor, insira uma opção válida.\n\nRetornando ao Menu Principal...")
+    return
+  }
   const indice = prompt ("Qual o índice da vaga na qual deseja inscrever o candidato?")
+  if (indice == "") {
+    alert("Valor inválido. Por favor, insira uma opção válida.\n\nRetornando ao Menu Principal...")
+    return
+  }
   confirm("Confirma a inscrição do candidato " + nomeCandidato + " na vaga " + indice + "?" +
   "\nNome da Vaga: " + vagas[indice].nome +
   "\nDescrição: " + vagas[indice].descricao +
